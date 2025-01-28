@@ -1,0 +1,20 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+video {
+    width: 80%;
+    max-width: 500px;
+    border: 2px solid black;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+}
