@@ -106,7 +106,7 @@ curl -X POST -F "image=@captura.jpg" http://127.0.0.1:5000/detect
 
 ---
 
-## 👨‍💻 Autor  
+## 👨‍💻 Autores  
 📍 Desarrollado por el grupo 4 correspondiente a la materia de construcción de software – Escuela Politécnica Nacional  
 
 
