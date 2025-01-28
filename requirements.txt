@@ -1,6 +1,6 @@
 cmake
 Flask
 opencv-python
-dlib
+dlib-bin
 imutils
 numpy
