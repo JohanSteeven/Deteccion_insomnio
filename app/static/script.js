@@ -3,10 +3,16 @@ const canvas = document.getElementById("canvas") || document.createElement("canv
 const context = canvas.getContext("2d");
 const statusText = document.getElementById("status-text");
 
+// Cargar sonidos de alerta
+const alarmSound = new Audio("static/alert.mp3");  // alarma de somnolencia
+
+
 // Acceder a la cámara
 navigator.mediaDevices.getUserMedia({ video: true })
     .then(stream => video.srcObject = stream)
     .catch(console.error);
+
+let lastState = "";
 
 // Función para capturar y enviar imágenes automáticamente
 function captureAndSend() {
@@ -25,6 +31,15 @@ function captureAndSend() {
         .then(res => res.json())
         .then(data => {
             statusText.textContent = data.status;
+
+            // Reproducir sonido solo cuando el estado cambie
+            if (data.status === "Somnoliento !" && lastState !== "Somnoliento !") {
+                alarmSound.play();
+            } else if (data.status === "DORMIDO !!!" && lastState !== "DORMIDO !!!") {
+                alarmSound.play();
+            }
+
+            lastState = data.status; // Guardar el último estado
         })
         .catch(err => {
             statusText.textContent = "Error al analizar imagen.";
