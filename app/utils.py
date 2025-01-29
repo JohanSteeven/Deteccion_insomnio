@@ -1,8 +1,8 @@
 import numpy as np
 
 # Función para calcular la distancia entre dos puntos
-def compute(ptA, ptB):
-    return np.linalg.norm(ptA - ptB)
+def compute(pt_a, pt_b):
+    return np.linalg.norm(pt_a - pt_b)
 
 # Función para determinar si los ojos están parpadeando
 def blinked(a, b, c, d, e, f):
