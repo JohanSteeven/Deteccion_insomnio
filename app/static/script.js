@@ -33,11 +33,10 @@ function captureAndSend() {
             statusText.textContent = data.status;
 
             // Reproducir sonido solo cuando el estado cambie
-            if (data.status === "Somnoliento !" && lastState !== "Somnoliento !") {
-                alarmSound.play();
-            } else if (data.status === "DORMIDO !!!" && lastState !== "DORMIDO !!!") {
+            if ((data.status === "Somnoliento !" || data.status === "DORMIDO !!!") && lastState !== data.status) {
                 alarmSound.play();
             }
+            
 
             lastState = data.status; // Guardar el último estado
         })
